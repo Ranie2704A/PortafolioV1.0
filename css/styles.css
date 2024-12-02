@@ -38,11 +38,16 @@ body{
 }
 
 .header-options li img {
-    max-width: 100%;
-    max-height: 100px;
-    margin: 0 auto;
-    display: block;
+    max-width: 100px; /* Ajusta el tamaño máximo de la imagen */
+    max-height: 100px; /* Ajusta la altura máxima de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el giro */
+}
 
+.header-options li img:hover {
+    transform: rotate(360deg); /* Gira la imagen 360 grados */
 }
 
 
