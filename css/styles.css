@@ -5,6 +5,7 @@ html{
 
 body{
     background: linear-gradient(to bottom, #121834, #1B1A36,#0F2D54, #243E6E, #275A72);
+    flex-wrap: wrap;
 }
 
 .header-container{
@@ -43,6 +44,8 @@ body{
     display: block;
 
 }
+
+
 
 a {
     text-decoration: none;
@@ -143,8 +146,38 @@ a {
     margin: 30px;
 }
 
-.social-medias li img:hover{
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-container div {
+    padding: 20px;
+    border: 1px solid orange;
+    background-color: #0F2D54;
+    aspect-ratio: 1 / 1; /* Hace que los divs sean cuadrados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s; /* Transición suave */
+}
+
+.project-container div:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del div */
+    z-index: 1; /* Asegura que el div agrandado esté por encima de los demás */
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+}
+
+.project-container div:hover ~ div,
+.project-container div:hover ~ div ~ div,
+.project-container div:hover ~ div ~ div ~ div,
+.project-container div:hover ~ div ~ div ~ div ~ div,
+.project-container div:hover ~ div ~ div ~ div ~ div ~ div {
+    transform: scale(0.9); /* Reduce el tamaño de los divs hermanos */
+}
+
+.project-container div:not(:hover) {
+    transform: scale(0.9); /* Reduce el tamaño de los divs que no están siendo resaltados */
 }
